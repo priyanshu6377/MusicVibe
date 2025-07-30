@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings - MusicVibe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body class="dark">
+   <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+ 
+  <div class="settings-container">
+
+    <section class="section">
+      <h2>👤Account</h2>
+      <p>Username: <b id="userNameDisplay">...</b></p>
+      <p>Password: <b id="userPasswordDisplay">...</b></p>
+
+
+    </section>
+
+    
+
+    <section class="section">
+      <h2>ℹ️About Us</h2>
+      <ul>
+        <p>MusicVibe is a sleek modern music streaming web app built for personalized listening. Enjoy trending tracks, albums, and artists all in one place.</p>
+        <li>🎵 Stream unlimited music</li>
+        <li>💡 Personalized recommendations</li>
+        <li>🚀 Fast and smooth experience</li>
+        <li>🔒 Secure user data</li>
+        <li>🌐 Accessible anytime, anywhere</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>📞Contact Us</h2>
+      <p>Email: support@musicvibe.com</p>
+      <p>Phone: +91 98765 43210</p>
+    </section>
+
+    <footer >
+      <p>&copy; 2025 MusicVibe. All rights reserved.</p>
+    </footer>
+  </div>
+
+
+  <!-- Now Playing Sidebar -->
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <div class="now-playing-header">
+          <h2>Now Playing</h2>
+        </div>
+        <div class="now-playing-list" id="nowPlayingList">
+          <!-- Songs will be added dynamically here -->
+        </div>
+      </div>
+
+
+      <!-- Fixed Bottom Now Playing Bar -->
+      <div class="now-footer">
+        <div class="now-footer-content">
+          <img src="assets/images/unknown.jpeg" alt="Now Playing">
+          <div class="song-text">
+            <p class="title">No Song Playing</p>
+            <p class="artist"></p>
+          </div>
+          <div class="player-controls">
+              <button class="prev"><i class="fas fa-backward"></i></button>
+              <button class="footer-play"><i class="fas fa-play"></i></button>
+              <button class="next"><i class="fas fa-forward"></i></button>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        const userName = localStorage.getItem("username");
+        const userPassword = localStorage.getItem("password");
+
+        document.getElementById("userNameDisplay").textContent = userName || "Guest";
+        document.getElementById("userPasswordDisplay").textContent = userPassword || "Not set";
+      </script>
+
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MusicVibe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+    <!-- Main + Right Content -->
+    <div class="content-wrapper">
+      <main class="main-content">
+        <div class="header">
+          <input type="text" placeholder="Search music...">
+          <div class="user">👤 <span id="usernameDisplay">User</span></div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Trending Songs Section -->
+        <section class="trending-section">
+          <h2>Kishore Kumar</h2>
+          <div class="trending-songs">
+            <div class="song-card" onclick="playSong('assets/Song/kish1.mp3', 'Roop Tera Mastana ','Kishore Kumar', 'assets/images/kish1.jpeg')">
+              <img src="assets/images/kish1.jpeg" alt="Roop Tera Mastana ">
+              <h3>Roop Tera Mastana </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish2.mp3', 'Kehdoon Tumhen  ','Kishore Kumar', 'assets/images/kish2.jpeg')">
+              <img src="assets/images/kish2.jpeg" alt="Kehdoon Tumhen  ">
+              <h3>Kehdoon Tumhen  </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish3.mp3', 'O Mere Dil Ke Chain Mere ','Kishore Kumar', 'assets/images/kish3.jpeg')">
+              <img src="assets/images/kish3.jpeg" alt="O Mere Dil Ke Chain Mere">
+              <h3>O Mere Dil Ke Chain Mere </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish4.mp3', 'Ek Ladki Bheegi Bhagi Si ','Kishore Kumar' ,'assets/images/kish4.jpeg')">
+              <img src="assets/images/kish4.jpeg" alt="Ek Ladki Bheegi Bhagi Si ">
+              <h3>Ek Ladki Bheegi Bhagi Si  </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish5.mp3','Yeh Sham Mastani ','Kishore Kumar', 'assets/images/kish5.jpeg')">
+              <img src="assets/images/kish5.jpeg" alt="Yeh Sham Mastani ">
+              <h3>Yeh Sham Mastani </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish6.mp3', 'Yeh Reshmi Zulfen','Kishore Kumar', 'assets/images/kish6.jpeg')">
+              <img src="assets/images/kish6.jpeg" alt="Yeh Reshmi Zulfen ">
+              <h3>Yeh Reshmi Zulfen</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish7.mp3', 'Mere Mehboob Qayamat Hogi','Kishore Kumar', 'assets/images/kish7.jpeg')">
+              <img src="assets/images/kish7.jpeg" alt="Mere Mehboob Qayamat Hogi">
+              <h3>Mere Mehboob Qayamat Hogi </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish8.mp3', 'Intaha Ho Gai  ','Kishore Kumar', 'assets/images/kish8.jpeg')">
+              <img src="assets/images/kish8.jpeg" alt="Intaha Ho Gai  ">
+              <h3>Intaha Ho Gai  </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish9.mp3','Ek Ajnabee Haseena Se','Kishore Kumar', 'assets/images/kish9.jpeg')">
+              <img src="assets/images/kish9.jpeg" alt="Ek Ajnabee Haseena Se">
+              <h3>Ek Ajnabee Haseena Se</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/kish10.mp3','Yeh Raaten Yeh Mausam','Kishore Kumar', 'assets/images/kish10.jpeg')">
+              <img src="assets/images/kish10.jpeg" alt="Yeh Raaten Yeh Mausam">
+              <h3>Yeh Raaten Yeh Mausam</h3>
+            </div>
+          </div>
+        </section>
+
+
+
+
+      </main>
+
+      <!-- Now Playing Sidebar -->
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <div class="now-playing-header">
+          <h2>Now Playing</h2>
+        </div>
+        <div class="now-playing-list" id="nowPlayingList">
+          <!-- Songs will be added dynamically here -->
+        </div>
+      </div>
+
+
+      <!-- Fixed Bottom Now Playing Bar -->
+      <div class="now-footer">
+        <div class="now-footer-content">
+          <img src="assets/images/unknown.jpeg" alt="Now Playing">
+          <div class="song-text">
+            <p class="title">No Song Playing</p>
+            <p class="artist"></p>
+          </div>
+          <div class="player-controls">
+              <button class="prev"><i class="fas fa-backward"></i></button>
+              <button class="footer-play"><i class="fas fa-play"></i></button>
+              <button class="next"><i class="fas fa-forward"></i></button>
+          </div>
+
+        </div>
+      </div>
+
+  <audio id="audio-player" src="assets/song/cover.mp3" style="display: none;"></audio>
+  
+  <script>
+    // Show logged in user
+    const name = localStorage.getItem("username");
+    if (name) {
+      document.getElementById("usernameDisplay").textContent = name;
+    } else {
+      document.getElementById("usernameDisplay").textContent = "Guest";
+    }
+
+    // Logout functions
+    function showLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'flex';
+    }
+
+    function closeLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'none';
+    }
+
+    function confirmLogout() {
+      localStorage.removeItem("username"); // clear username
+      window.location.href = "logout.html"; // redirect to logout page
+    }
+  </script>
+
+  
+  <script src="main.js"></script>
+</body>
+</html>

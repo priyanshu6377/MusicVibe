@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MusicVibe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+    <!-- Main + Right Content -->
+    <div class="content-wrapper">
+      <main class="main-content">
+        <div class="header">
+          <input type="text" placeholder="Search music...">
+          <div class="user">👤 <span id="usernameDisplay">User</span></div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Trending Songs Section -->
+        <section class="trending-section">
+          <h2>Arijit Singh</h2>
+          <div class="trending-songs">
+            <div class="song-card" onclick="playSong('assets/Song/arj1.mp3', 'Daayre','Arijit Singh', 'assets/images/arj1.jpeg')">
+              <img src="assets/images/arj1.jpeg" alt="Daayre">
+              <h3>Daayre</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj2.mp3', 'Tujhe Kitna Chahne Lage ','Arijit Singh', 'assets/images/arj2.jpeg')">
+              <img src="assets/images/arj2.jpeg" alt="Tujhe Kitna Chahne Lage">
+              <h3>Tujhe Kitna Chahne Lage</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj3.mp3', 'Ae Dil Hai Mushkil','Arijit Singh, Pritam', 'assets/images/arj3.jpeg')">
+              <img src="assets/images/arj3.jpeg" alt="Ae Dil Hai Mushkil">
+              <h3>Ae Dil Hai Mushkil</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj4.mp3', 'Humdard','Arijit Singh' ,'assets/images/arj4.jpeg')">
+              <img src="assets/images/arj4.jpeg" alt="Humdard">
+              <h3>Humdard</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj5.mp3','Milne Hai Mujse Aayi','Arijit Singh', 'assets/images/arj5.jpeg')">
+              <img src="assets/images/arj5.jpeg" alt="Milne Hai Mujse Aayi">
+              <h3>Milne Hai Mujse Aayi</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj6.mp3', 'Kabhi Jo Badal Barse','Arijit Singh', 'assets/images/arj6.jpeg')">
+              <img src="assets/images/arj6.jpeg" alt="Kabhi Jo Badal Barse">
+              <h3>Kabhi Jo Badal Barse</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj7.mp3', 'Hawayein','Arijit Singh', 'assets/images/arj7.jpeg')">
+              <img src="assets/images/arj7.jpeg" alt="Hawayein">
+              <h3>Hawayein</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj8.mp3', 'Ilahi','Arijit Singh, Pritam', 'assets/images/arj8.jpeg')">
+              <img src="assets/images/arj8.jpeg" alt="Ilahi">
+              <h3>Ilahi</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj9.mp3','Tera Fitoor','Arijit Singh', 'assets/images/arj9.jpeg')">
+              <img src="assets/images/arj9.jpeg" alt="Tera Fitoor">
+              <h3>Tera Fitoor</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/arj10.mp3','Pal','Arijit Singh', 'assets/images/arj10.jpeg')">
+              <img src="assets/images/arj10.jpeg" alt="Pal">
+              <h3>Pal</h3>
+            </div>
+          </div>
+        </section>
+
+
+
+
+      </main>
+
+      <!-- Now Playing Sidebar -->
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <div class="now-playing-header">
+          <h2>Now Playing</h2>
+        </div>
+        <div class="now-playing-list" id="nowPlayingList">
+          <!-- Songs will be added dynamically here -->
+        </div>
+      </div>
+
+
+      <!-- Fixed Bottom Now Playing Bar -->
+      <div class="now-footer">
+        <div class="now-footer-content">
+          <img src="assets/images/unknown.jpeg" alt="Now Playing">
+          <div class="song-text">
+            <p class="title">No Song Playing</p>
+            <p class="artist"></p>
+          </div>
+          <div class="player-controls">
+              <button class="prev"><i class="fas fa-backward"></i></button>
+              <button class="footer-play"><i class="fas fa-play"></i></button>
+              <button class="next"><i class="fas fa-forward"></i></button>
+          </div>
+
+        </div>
+      </div>
+
+  <audio id="audio-player" src="assets/song/cover.mp3" style="display: none;"></audio>
+  
+  <script>
+    // Show logged in user
+    const name = localStorage.getItem("username");
+    if (name) {
+      document.getElementById("usernameDisplay").textContent = name;
+    } else {
+      document.getElementById("usernameDisplay").textContent = "Guest";
+    }
+
+    // Logout functions
+    function showLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'flex';
+    }
+
+    function closeLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'none';
+    }
+
+    function confirmLogout() {
+      localStorage.removeItem("username"); // clear username
+      window.location.href = "logout.html"; // redirect to logout page
+    }
+  </script>
+
+  
+  <script src="main.js"></script>
+</body>
+</html>

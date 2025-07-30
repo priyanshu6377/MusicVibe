@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MusicVibe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+    <!-- Main + Right Content -->
+    <div class="content-wrapper">
+      <main class="main-content">
+        <div class="header">
+          <input type="text" placeholder="Search music...">
+          <div class="user">👤 <span id="usernameDisplay">User</span></div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Trending Songs Section -->
+        <section class="trending-section">
+          <h2>Honey Singh</h2>
+          <div class="trending-songs">
+            <div class="song-card" onclick="playSong('assets/Song/hon1.mp3', 'Millionaire','Honey Singh', 'assets/images/hon1.jpeg')">
+              <img src="assets/images/hon1.jpeg" alt="Millionaire">
+              <h3>Millionaire</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/hon2.mp3', 'Dope Shope ','Honey Singh', 'assets/images/hon2.jpeg')">
+              <img src="assets/images/hon2.jpeg" alt="Dope Shope">
+              <h3>Dope Shope</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/hon3.mp3', 'Paris Ka Trip','Honey Singh, Pritam', 'assets/images/hon3.jpeg')">
+              <img src="assets/images/hon3.jpeg" alt="Paris Ka Trip">
+              <h3>Paris Ka Trip</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/hon4.mp3', 'Chaar Botal Vodka','Honey Singh' ,'assets/images/hon4.jpeg')">
+              <img src="assets/images/hon5.jpeg" alt="Chaar Botal Vodka">
+              <h3>Chaar Botal Vodka</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/hon5.mp3','Jatt Mehkma','Honey Singh', 'assets/images/hon5.jpeg')">
+              <img src="assets/images/hon4.jpeg" alt="Jatt Mehkma">
+              <h3>Jatt Mehkma</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/song/hon6.mp3', 'Gabhru', 'Jstar', 'assets/images/hon6.jpeg')">
+                <img src="assets/images/hon6.jpeg" alt="Gabhru">
+                <h3>Gabhru</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/song/hon7.mp3', 'Angreji Beat','Yo Yo Honey Singh , Gippy Grewal', 'assets/images/hon7.jpeg')">
+                <img src="assets/images/hon7.jpeg" alt="Angreji Beat">
+                <h3>Angreji Beat</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/song/hon8.mp3', 'Makhna', 'Yo Yo Honey Singh , Neha Kakkar , Singhata , Pinaki', 'assets/images/hon8.jpeg')">
+                <img src="assets/images/hon8.jpeg" alt="Makhna">
+                <h3>Makhna</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/trend9.mp3', 'Lal Pari', 'Honey Singh, Amanjot Singh, Simram Kaur', 'assets/images/trend9.jpeg')">
+              <img src="assets/images/trend9.jpeg" alt="Lal Pari">
+              <h3>Lal Pari</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/hon10.mp3','Chote Chote Peg',' Navraj Hans, Yo Yo Honey Singh, Neha Kakkar', 'assets/images/hon10.jpeg')">
+              <img src="assets/images/hon10.jpeg" alt="Chote Chote Peg">
+              <h3>Chote Chote Peg</h3>
+            </div>
+          </div>
+        </section>
+
+
+
+
+      </main>
+
+      <!-- Now Playing Sidebar -->
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <div class="now-playing-header">
+          <h2>Now Playing</h2>
+        </div>
+        <div class="now-playing-list" id="nowPlayingList">
+          <!-- Songs will be added dynamically here -->
+        </div>
+      </div>
+
+
+      <!-- Fixed Bottom Now Playing Bar -->
+      <div class="now-footer">
+        <div class="now-footer-content">
+          <img src="assets/images/unknown.jpeg" alt="Now Playing">
+          <div class="song-text">
+            <p class="title">No Song Playing</p>
+            <p class="artist"></p>
+          </div>
+          <div class="player-controls">
+              <button class="prev"><i class="fas fa-backward"></i></button>
+              <button class="footer-play"><i class="fas fa-play"></i></button>
+              <button class="next"><i class="fas fa-forward"></i></button>
+          </div>
+
+        </div>
+      </div>
+
+  <audio id="audio-player" src="assets/song/cover.mp3" style="display: none;"></audio>
+  
+  <script>
+    // Show logged in user
+    const name = localStorage.getItem("username");
+    if (name) {
+      document.getElementById("usernameDisplay").textContent = name;
+    } else {
+      document.getElementById("usernameDisplay").textContent = "Guest";
+    }
+
+    // Logout functions
+    function showLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'flex';
+    }
+
+    function closeLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'none';
+    }
+
+    function confirmLogout() {
+      localStorage.removeItem("username"); // clear username
+      window.location.href = "logout.html"; // redirect to logout page
+    }
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sky Force</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+
+
+  <div class="content-wrapper">
+    <div class="playlist-content">
+      <h1>Sky Force</h1>
+      <br>
+      <br>
+      <div class="punjabi-songs">
+        <div class="song-card" onclick="playSong('album/song/a1.mp3', 'Maaye ', 'Tanishk Bagchi , Manoj Muntashir , B Praak', 'album/images/a1.jpeg')">
+          <img src="album/images/a1.jpeg" alt="Maaye ">
+          <h3>Maaye </h3>
+          <p>Tanishk Bagchi , Manoj Muntashir , B Praak</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/a2.mp3', 'Tu Hain Toh Main Hoon', 'Tanishk Bagchi , Irshad Kamil , Arijit Singh , Afsana Khan', 'album/images/a2.jpeg')">
+          <img src="album/images/a2.jpeg" alt="Tu Hain Toh Main Hoon">
+          <h3>Tu Hain Toh Main Hoon</h3>
+          <p>Tanishk Bagchi , Irshad Kamil , Arijit Singh , Afsana Khan</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/a3.mp3', 'Rang ', 'Tanishk Bagchi , Satinder Sartaaj , Shloke Lal , Zahrah S Khan', 'album/images/a3.jpeg')">
+          <img src="album/images/a3.jpeg" alt="Rang ">
+          <h3>Rang </h3>
+          <p>Tanishk Bagchi , Satinder Sartaaj , Shloke Lal , Zahrah S Khan</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/a4.mp3', 'Kya Meri Yaad Aati Hai', 'Tanishk Bagchi , Irshad Kamil , Vishal Mishra', 'album/images/a4.jpeg')">
+          <img src="album/images/a4.jpeg" alt="Kya Meri Yaad Aati Hai">
+          <h3>Kya Meri Yaad Aati Hai</h3>
+          <p>Tanishk Bagchi , Irshad Kamil , Vishal Mishra</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/a5.mp3', 'Ae Mere Watan Ke Logon', 'Lata Mangeshkar , C.Ramchandra , pradeep , Tanishk Bagchi', 'album/images/a5.jpeg')">
+          <img src="album/images/a5.jpeg" alt="Ae Mere Watan Ke Logon">
+          <h3>Ae Mere Watan Ke Logon</h3>
+          <p>Lata Mangeshkar , C.Ramchandra , pradeep , Tanishk Bagchi</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+   
+
+  <!-- Now Playing Sidebar -->
+  <!-- Right Sidebar -->
+  <div class="right-sidebar">
+    <div class="now-playing-header">
+      <h2>Now Playing</h2>
+    </div>
+    <div class="now-playing-list" id="nowPlayingList">
+      <!-- Songs will be added dynamically here -->
+    </div>
+  </div>
+  
+
+  <!-- Fixed Bottom Now Playing Bar -->
+  <div class="now-footer">
+    <div class="now-footer-content">
+      <img src="assets/images/unknown.jpeg" alt="Now Playing">
+      <div class="song-text">
+        <p class="title">No Song Playing</p>
+        <p class="artist"></p>
+      </div>
+      <div class="player-controls">
+          <button class="prev"><i class="fas fa-backward"></i></button>
+          <button class="footer-play"><i class="fas fa-play"></i></button>
+          <button class="next"><i class="fas fa-forward"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <audio id="audio-player" src="album/song/Ae Mere Watan Ke Logon Sky Force 320 Kbps.mp3" style="display: none;"></audio>
+  
+  <script src="main.js"></script>
+
+</body>
+</html>

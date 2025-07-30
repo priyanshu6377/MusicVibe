@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Punjabi Playlist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+  <div class="content-wrapper">
+    <div class="playlist-content">
+      <h1>Punjabi Playlist</h1>
+      <br>
+      <br>
+      <div class="punjabi-songs">
+        <div class="song-card" onclick="playSong('punjabis/song/punj1.mp3', 'Patiyala Peg', 'Diljit Dosanjh', 'punjabis/images/punj1.jpeg')">
+          <img src="punjabis/images/punj1.jpeg" alt="Patiyala Peg">
+          <h3>Patiyala Peg</h3>
+          <p>Diljit Dosanjh</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj2.mp3', 'Excusses', 'AP Dhillon , Intense , Gurinder Gill', 'punjabis/images/punj2.jpeg')">
+          <img src="punjabis/images/punj2.jpeg" alt="Excusses">
+          <h3>Excusses</h3>
+          <p>AP Dhillon , Intense , Gurinder Gill</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj3.mp3', 'Phulkari', 'Karan Randhawa', 'punjabis/images/punj3.jpeg')">
+          <img src="punjabis/images/punj3.jpeg" alt="Phulkari">
+          <h3>Phulkari</h3>
+          <p>Karan Randhawa</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj4.mp3', '295', 'Sidhu Moose Wala ', 'punjabis/images/punj4.jpeg')">
+          <img src="punjabis/images/punj4.jpeg" alt="295">
+          <h3>295</h3>
+          <p>Sidhu Moose Wala</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj5.mp3', 'Pind de Gerhe', 'Rupinder Handa', 'punjabis/images/punj5.jpeg')">
+          <img src="punjabis/images/punj5.jpeg" alt="Pind de Gerhe">
+          <h3>Pind de Gerhe</h3>
+          <p>Rupinder Handa</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj6.mp3', 'Gabhru', 'Jstar', 'punjabis/images/punj6.jpeg')">
+          <img src="punjabis/images/punj6.jpeg" alt="Gabhru">
+          <h3>Gabhru</h3>
+          <p>Jstar</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj7.mp3', 'Angreji Beat','Yo Yo Honey Singh , Gippy Grewal', 'punjabis/images/punj7.jpeg')">
+          <img src="punjabis/images/punj7.jpeg" alt="Angreji Beat">
+          <h3>Angreji Beat</h3>
+          <p>Yo Yo Honey Singh , Gippy Grewal</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj8.mp3', 'Makhna', 'Yo Yo Honey Singh , Neha Kakkar , Singhata , Pinaki', 'punjabis/images/punj8.jpeg')">
+          <img src="punjabis/images/punj8.jpeg" alt="Makhna">
+          <h3>Makhna</h3>
+          <p> Yo Yo Honey Singh , Neha Kakkar , Singhata , Pinaki</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj9.mp3', 'Kabza', 'Babbu Mann', 'punjabis/images/punj9.jpeg')">
+          <img src="punjabis/images/punj9.jpeg" alt="Kabza">
+          <h3>Kabza</h3>
+          <p>Babbu Mann</p>
+        </div>
+        <div class="song-card" onclick="playSong('punjabis/song/punj10.mp3', 'chaiya chaiya', 'Sukhminder Singh , Saona Awasthi', 'punjabis/images/punj10.jpeg')">
+          <img src="punjabis/images/punj10.jpeg" alt="chaiya chaiya ">
+          <h3>chaiya chaiya</h3>
+          <p>Sukhminder Singh , Saona Awasthi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+
+  <!-- Now Playing Sidebar -->
+  <!-- Right Sidebar -->
+  <div class="right-sidebar">
+    <div class="now-playing-header">
+      <h2>Now Playing</h2>
+    </div>
+    <div class="now-playing-list" id="nowPlayingList">
+      <!-- Songs will be added dynamically here -->
+    </div>
+  </div>
+  
+
+  <!-- Fixed Bottom Now Playing Bar -->
+  <div class="now-footer">
+    <div class="now-footer-content">
+      <img src="assets/images/unknown.jpeg" alt="Now Playing">
+      <div class="song-text">
+        <p class="title">No Song Playing</p>
+        <p class="artist"></p>
+      </div>
+      <div class="player-controls">
+          <button class="prev"><i class="fas fa-backward"></i></button>
+          <button class="footer-play"><i class="fas fa-play"></i></button>
+          <button class="next"><i class="fas fa-forward"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <audio id="audio-player" src="punjabis/song/punj1.mp3" style="display: none;"></audio>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soft Music Playlist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+  <div class="content-wrapper">
+    <div class="playlist-content">
+      <h1>Soft Music Playlist</h1>
+      <br>
+      <br>
+      <div class="trending-songs">
+        <div class="song-card" onclick="playSong('soft/song/soft1.mp3', 'Tum Ho', 'Mohit Chauhan and Suzanne D Mello', 'soft/images/soft1.jpeg')">
+          <img src="soft/images/soft1.jpeg" alt="Tum Ho">
+          <h3>Tum Ho</h3>
+          <p>Mohit Chauhan and Suzanne D'Mello</p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft2.mp3', 'Chashni', ' Abhijeet Srivastava', 'soft/images/soft2.jpeg')">
+          <img src="soft/images/soft2.jpeg" alt="Chashni">
+          <h3>Chashni</h3>
+          <p> Abhijeet Srivastava </p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft3.mp3', 'Dildara', 'Shafqat Amanat Ali', 'soft/images/soft3.jpeg')">
+          <img src="soft/images/soft3.jpeg" alt="Dildara">
+          <h3>Dildara</h3>
+          <p>Shafqat Amanat Ali</p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft4.mp3', 'Pehle Bhi Main', 'Vishal Mishra ', 'soft/images/soft4.jpeg')">
+          <img src="soft/images/soft4.jpeg" alt="Pehle Bhi Main">
+          <h3>Pehle Bhi Main</h3>
+          <p>Vishal Mishra</p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft5.mp3', 'Tu Jaane Na', 'Atif Aslam', 'soft/images/soft5.jpeg')">
+          <img src="soft/images/soft5.jpeg" alt="Tu Jaane Na">
+          <h3>Tu Jaane Na</h3>
+          <p>Atif Aslam</p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft6.mp3', 'O re Piya', 'Rahat Fateh Ali Khan', 'soft/images/soft6.jpeg')">
+          <img src="soft/images/soft6.jpeg" alt="O re Piya">
+          <h3>O re Piya</h3>
+          <p>Rahat Fateh Ali Khan</p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft7.mp3', 'Tum Se Hi','Mohit Chauhan', 'soft/images/soft7.jpeg')">
+          <img src="soft/images/soft7.jpeg" alt="Tum Se Hi">
+          <h3>Tum Se Hi</h3>
+          <p>Mohit Chauhan</p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft8.mp3', 'Sahiba', 'Aditya Rikhani', 'soft/images/soft8.jpeg')">
+          <img src="soft/images/soft8.jpeg" alt="Sahiba">
+          <h3>Sahiba</h3>
+          <p> Aditya Rikhani </p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft9.mp3', 'Ishq Risk', 'Rahat Fateh Ali Khan', 'soft/images/soft9.jpeg')">
+          <img src="soft/images/soft9.jpeg" alt="Ishq Risk">
+          <h3>Ishq Risk</h3>
+          <p>Rahat Fateh Ali Khan</p>
+        </div>
+        <div class="song-card" onclick="playSong('soft/song/soft10.mp3', 'Tera Hone Lga Hoon', 'SAtif Aslam and Alisha Chinai', 'soft/images/soft10.jpeg')">
+          <img src="soft/images/soft10.jpeg" alt="Tera Hone Lga Hoon ">
+          <h3>Tera Hone Lga Hoon</h3>
+          <p>Atif Aslam and Alisha Chinai</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Now Playing Sidebar -->
+  <!-- Right Sidebar -->
+  <div class="right-sidebar">
+    <div class="now-playing-header">
+      <h2>Now Playing</h2>
+    </div>
+    <div class="now-playing-list" id="nowPlayingList">
+      <!-- Songs will be added dynamically here -->
+    </div>
+  </div>
+
+
+   <!-- Fixed Bottom Now Playing Bar -->
+  <div class="now-footer">
+    <div class="now-footer-content">
+      <img src="assets/images/unknown.jpeg" alt="Now Playing">
+      <div class="song-text">
+        <p class="title">No Song Playing</p>
+        <p class="artist"></p>
+      </div>
+      <div class="player-controls">
+          <button class="prev"><i class="fas fa-backward"></i></button>
+          <button class="footer-play"><i class="fas fa-play"></i></button>
+          <button class="next"><i class="fas fa-forward"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <audio id="audio-player" src="punjabis/song/punj1.mp3" style="display: none;"></audio>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

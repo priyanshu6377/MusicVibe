@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+
+  <div class="content-wrapper">
+    <div class="playlist-content">
+      <h1>Animal</h1>
+      <br>
+      <br>
+      <div class="punjabi-songs">
+        <div class="song-card" onclick="playSong('soft/song/soft4.mp3', 'Pehle Bhi Main', 'Vishal Mishra ', 'soft/images/soft4.jpeg')">
+          <img src="soft/images/soft4.jpeg" alt="Pehle Bhi Main">
+          <h3>Pehle Bhi Main</h3>
+          <p>Vishal Mishra</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/d2.mp3', 'Satranga', 'Arijit Singh , Shreyas , Sidharth', 'album/images/d2.jpeg')">
+          <img src="album/images/d2.jpeg" alt="Satranga">
+          <h3>Satranga</h3>
+          <p>Arijit Singh , Shreyas , Sidharth</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/d3.mp3', 'Arjan Vailly ', 'Bhupinder Babbal', 'album/images/d3.jpeg')">
+          <img src="album/images/d3.jpeg" alt="Arjan Vailly ">
+          <h3>Arjan Vailly </h3>
+          <p>Bhupinder Babbal</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/d4.mp3', 'Papa Meri Jaan', 'Papa Meri Jaan', 'album/images/d4.jpeg')">
+          <img src="album/images/d4.jpeg" alt="Papa Meri Jaan">
+          <h3>Papa Meri Jaan</h3>
+          <p>Papa Meri Jaan</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/d5.mp3', 'Abrars Entry Jamal Kudu', 'Harshavardhan Rameshwar', 'album/images/d5.jpeg')">
+          <img src="album/images/d5.jpeg" alt="Abrars Entry Jamal Kudu">
+          <h3>Abrars Entry Jamal Kudu</h3>
+          <p>Harshavardhan Rameshwar</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+   
+
+  <!-- Now Playing Sidebar -->
+  <!-- Right Sidebar -->
+  <div class="right-sidebar">
+    <div class="now-playing-header">
+      <h2>Now Playing</h2>
+    </div>
+    <div class="now-playing-list" id="nowPlayingList">
+      <!-- Songs will be added dynamically here -->
+    </div>
+  </div>
+  
+
+  <!-- Fixed Bottom Now Playing Bar -->
+  <div class="now-footer">
+    <div class="now-footer-content">
+      <img src="assets/images/unknown.jpeg" alt="Now Playing">
+      <div class="song-text">
+        <p class="title">No Song Playing</p>
+        <p class="artist"></p>
+      </div>
+      <div class="player-controls">
+          <button class="prev"><i class="fas fa-backward"></i></button>
+          <button class="footer-play"><i class="fas fa-play"></i></button>
+          <button class="next"><i class="fas fa-forward"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <audio id="audio-player" src="album/song/Ae Mere Watan Ke Logon Sky Force 320 Kbps.mp3" style="display: none;"></audio>
+
+
+  
+  <script src="main.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MusicVibe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+    <!-- Main + Right Content -->
+    <div class="content-wrapper">
+      <main class="main-content">
+        <div class="header">
+          <input type="text" placeholder="Search music...">
+          <div class="user">👤 <span id="usernameDisplay">User</span></div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Trending Songs Section -->
+        <section class="trending-section">
+          <h2>Atif Aslam</h2>
+          <div class="trending-songs">
+            <div class="song-card" onclick="playSong('assets/Song/atif1.mp3', 'Main Rang Sharbaton Ka','Atif Aslam', 'assets/images/atif1.jpeg')">
+              <img src="assets/images/atif1.jpeg" alt="Main Rang Sharbaton Ka">
+              <h3>Main Rang Sharbaton Ka</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif2.mp3', 'Tera Hone Laga Hoon ','Atif Aslam', 'assets/images/atif2.jpeg')">
+              <img src="assets/images/atif2.jpeg" alt="Tera Hone Laga Hoon ">
+              <h3>Tera Hone Laga Hoon </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif3.mp3', 'Dil Meri Na Sune ','Atif Aslam', 'assets/images/atif3.jpeg')">
+              <img src="assets/images/atif3.jpeg" alt="Dil Meri Na Sune ">
+              <h3>Dil Meri Na Sune </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif4.mp3', 'Bakhuda Tumhi Ho Kismat ','Atif Aslam' ,'assets/images/atif4.jpeg')">
+              <img src="assets/images/atif4.jpeg" alt="Bakhuda Tumhi Ho Kismat ">
+              <h3>Bakhuda Tumhi Ho Kismat </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif5.mp3','Jeene Laga Hoon','Atif Aslam', 'assets/images/atif5.jpeg')">
+              <img src="assets/images/atif5.jpeg" alt="Jeene Laga Hoon">
+              <h3>Jeene Laga Hoon</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif6.mp3', 'Piya O Re Piya ','Atif Aslam', 'assets/images/atif6.jpeg')">
+              <img src="assets/images/atif6.jpeg" alt="Piya O Re Piya ">
+              <h3>Piya O Re Piya </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif7.mp3', 'Pehli Nazar Mein ','Atif Aslam', 'assets/images/atif7.jpeg')">
+              <img src="assets/images/atif7.jpeg" alt="Pehli Nazar Mein ">
+              <h3>Pehli Nazar Mein </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif8.mp3', 'Tere Liye ','Atif Aslam', 'assets/images/atif8.jpeg')">
+              <img src="assets/images/atif8.jpeg" alt="Tere Liye ">
+              <h3>Tere Liye </h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif9.mp3','Be Intehaan','Atif Aslam', 'assets/images/atif9.jpeg')">
+              <img src="assets/images/atif9.jpeg" alt="Be Intehaan">
+              <h3>Be Intehaan</h3>
+            </div>
+            <div class="song-card" onclick="playSong('assets/Song/atif10.mp3','Rang Jo Lagyo','Atif Aslam', 'assets/images/atif10.jpeg')">
+              <img src="assets/images/atif10.jpeg" alt="Rang Jo Lagyo">
+              <h3>Rang Jo Lagyo</h3>
+            </div>
+          </div>
+        </section>
+
+
+
+
+      </main>
+
+      <!-- Now Playing Sidebar -->
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <div class="now-playing-header">
+          <h2>Now Playing</h2>
+        </div>
+        <div class="now-playing-list" id="nowPlayingList">
+          <!-- Songs will be added dynamically here -->
+        </div>
+      </div>
+
+
+      <!-- Fixed Bottom Now Playing Bar -->
+      <div class="now-footer">
+        <div class="now-footer-content">
+          <img src="assets/images/unknown.jpeg" alt="Now Playing">
+          <div class="song-text">
+            <p class="title">No Song Playing</p>
+            <p class="artist"></p>
+          </div>
+          <div class="player-controls">
+              <button class="prev"><i class="fas fa-backward"></i></button>
+              <button class="footer-play"><i class="fas fa-play"></i></button>
+              <button class="next"><i class="fas fa-forward"></i></button>
+          </div>
+
+        </div>
+      </div>
+
+  <audio id="audio-player" src="assets/song/cover.mp3" style="display: none;"></audio>
+  
+  <script>
+    // Show logged in user
+    const name = localStorage.getItem("username");
+    if (name) {
+      document.getElementById("usernameDisplay").textContent = name;
+    } else {
+      document.getElementById("usernameDisplay").textContent = "Guest";
+    }
+
+    // Logout functions
+    function showLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'flex';
+    }
+
+    function closeLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'none';
+    }
+
+    function confirmLogout() {
+      localStorage.removeItem("username"); // clear username
+      window.location.href = "logout.html"; // redirect to logout page
+    }
+  </script>
+
+  
+  <script src="main.js"></script>
+</body>
+</html>

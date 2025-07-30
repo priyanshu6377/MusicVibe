@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shree 420</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🎵 MusicVibe</h2>
+      <nav>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <h3>My Music</h3>
+        <a href="playlist.html">Playlists</a>
+        <a href="trending.html">Trending Songs</a>
+        <a href="album.html">Albums</a>
+        <a href="artist.html">Artists</a>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-links">
+        <a href="setting.html">Help</a>
+        <a href="javascript:void(0);" onclick="showLogoutModal()">Logout</a>
+      </div>
+    </aside>
+    <br>
+    <br>
+
+
+  <div class="content-wrapper">
+    <div class="playlist-content">
+      <h1>Shree 420</h1>
+      <br>
+      <br>
+      <div class="punjabi-songs">
+        <div class="song-card" onclick="playSong('album/song/b1.mp3', 'Sham Gayi Raat Aayi ', 'Lata Mangeshkar , Mukesh', 'album/images/b1.jpeg')">
+          <img src="album/images/b1.jpeg" alt="Sham Gayi Raat Aayi ">
+          <h3>Sham Gayi Raat Aayi </h3>
+          <p>Lata Mangeshkar , Mukesh</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/b2.mp3', 'O Janewale', 'Lata Mangeshkar , Mukesh', 'album/images/b2.jpeg')">
+          <img src="album/images/b2.jpeg" alt="O Janewale">
+          <h3>O Janewale</h3>
+          <p>Lata Mangeshkar , Mukesh</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/b3.mp3', 'Mera Joota Hai Japani  ', 'Mukesh', 'album/images/b3.jpeg')">
+          <img src="album/images/b3.jpeg" alt="Mera Joota Hai Japani  ">
+          <h3>Mera Joota Hai Japani  </h3>
+          <p>Mukesh</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/b4.mp3', 'Pyar Hua Iqrar Hua', 'Lata Mangeshkar , Manna Dey', 'album/images/b4.jpeg')">
+          <img src="album/images/b4.jpeg" alt="Pyar Hua Iqrar Hua">
+          <h3>Pyar Hua Iqrar Hua</h3>
+          <p>Lata Mangeshkar , Manna Dey</p>
+        </div>
+        <div class="song-card" onclick="playSong('album/song/b5.mp3', 'Ramaiya Vastavaiya', 'Lata Mangeshkar, Mohammed Rafi, and Mukesh', 'album/images/b5.jpeg')">
+          <img src="album/images/b5.jpeg" alt="Ramaiya Vastavaiya">
+          <h3>Ramaiya Vastavaiya</h3>
+          <p>Lata Mangeshkar, Mohammed Rafi, and Mukesh</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+   
+
+  <!-- Now Playing Sidebar -->
+  <!-- Right Sidebar -->
+  <div class="right-sidebar">
+    <div class="now-playing-header">
+      <h2>Now Playing</h2>
+    </div>
+    <div class="now-playing-list" id="nowPlayingList">
+      <!-- Songs will be added dynamically here -->
+    </div>
+  </div>
+  
+
+  <!-- Fixed Bottom Now Playing Bar -->
+  <div class="now-footer">
+    <div class="now-footer-content">
+      <img src="assets/images/unknown.jpeg" alt="Now Playing">
+      <div class="song-text">
+        <p class="title">No Song Playing</p>
+        <p class="artist"></p>
+      </div>
+      <div class="player-controls">
+          <button class="prev"><i class="fas fa-backward"></i></button>
+          <button class="footer-play"><i class="fas fa-play"></i></button>
+          <button class="next"><i class="fas fa-forward"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <audio id="audio-player" src="album/song/Ae Mere Watan Ke Logon Sky Force 320 Kbps.mp3" style="display: none;"></audio>
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>
